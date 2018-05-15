@@ -10,34 +10,31 @@ USE bamazon_db;
 -- Creates a 'products' table within the database --
 CREATE TABLE products (
   -- Creates a numeric column called 'item_id' which auto-increments as each row of values is added --
-  item_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  id INTEGER(11) AUTO_INCREMENT NOT NULL,
   -- Makes a string column called 'product_name' which cannot contain null --
   product_name VARCHAR(30) NOT NULL,
-  -- Makes a string column called 'department_name' which cannot contain null --
-  department_name VARCHAR(30) NOT NULL,
   -- Makes an numeric column called 'item_price' --
-  item_price DECIMAL(10,2),
+  price_$ DECIMAL(10,2),
   -- Makes an numeric column called 'stock_quantity' --
-  stock_quantity INTEGER(10),
+  stocked_quantity INTEGER(10),
   -- Sets 'item_id' as table's primary key for unique row values --
-  PRIMARY KEY (item_id)
+  PRIMARY KEY (id)
 );
 
 -- Creates new rows containing data in all named columns --
 INSERT INTO products 
-    (product_name, department_name, item_price, stock_quantity)
+    (product_name, price_$, stocked_quantity)
 VALUES 
-    ('Product 1', 'Department 1', 1.25, 10),
-    ('Product 2', 'Department 2', 3.75, 15),
-    ('Product 3', 'Department 3', 2.25, 25),
-    ('Product 4', 'Department 1', 5.25, 15),
-    ('Product 5', 'Department 2', 4.75, 20),
-    ('Product 6', 'Department 3', 2.75, 10),
-    ('Product 7', 'Department 1', 1.50, 30),
-    ('Product 8', 'Department 4', 3.50, 15),
-    ('Product 9', 'Department 2', 4.25, 51),
-    ('Product 10', 'Department 1', 3.25, 3);
-
+    ('Product 1', 1.25, 10),
+    ('Product 2', 3.75, 15),
+    ('Product 3', 2.25, 25),
+    ('Product 4', 5.25, 15),
+    ('Product 5', 4.75, 20),
+    ('Product 6', 2.75, 10),
+    ('Product 7', 1.50, 30),
+    ('Product 8', 3.50, 15),
+    ('Product 9', 4.25, 50),
+    ('Product 10', 3.25, 30);
 
 -- Used to select all columns from the table 'products' --
 SELECT * FROM products;
